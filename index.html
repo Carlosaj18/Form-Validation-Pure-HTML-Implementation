@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="buttons-container">
+        <button id="loginButton">Login</button>
+        <button id="registerButton">Register</button>
+      </div>
+
+      <!-- Register -->
+      <div class="form-container" id="registerForm" style="display: none">
+        <h2>Register</h2>
+        <form id="formRegister" action="/" method="GET">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              minlength="3"
+              maxlength="50"
+              autocomplete="on"
+            />
+            <div id="errorName" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              minlength="6"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}"
+              title="Password must contain at least one digit, one uppercase letter, one lowercase letter, and one special character."
+            />
+            <div id="errorPassword" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              placeholder="Confirm your password"
+              minlength="6"
+            />
+            <div id="errorConfirmPassword" class="error"></div>
+          </div>
+          <button type="submit" class="submit-button">Register</button>
+        </form>
+      </div>
+      <!-- Login -->
+      <div class="form-container" id="loginForm" style="display: none">
+        <h2>Login</h2>
+        <form id="formLogin" action="/" method="GET">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              placeholder="Username"
+              minlength="3"
+              maxlength="50"
+              autocomplete="on"
+            />
+            <div id="errorUsername" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input
+              id="loginPassword"
+              name="loginPassword"
+              type="password"
+              placeholder="Password"
+            />
+            <div id="errorLoginPassword" class="error"></div>
+          </div>
+          <button type="submit" class="submit-button">Login</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
